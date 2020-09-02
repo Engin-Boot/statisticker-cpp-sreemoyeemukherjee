@@ -1,6 +1,7 @@
 #include "stats.h"
 #include <iostream>
 #include <algorithm>
+#include <math.h>
 using namespace std;
 
 Stats Statistics::ComputeStatistics(const std::vector<float>& vect) {
@@ -16,7 +17,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& vect) {
     float sum=0;
     s.min = *min_element(vect.begin(),vect.end());
     s.max = *max_element(vect.begin(), vect.end());
-    for (int i = 0; i < vect.size(); i++)
+    for (int i = 0; (unsigned) i < vect.size(); i++)
     {
         sum = sum + vect[i];
     }
